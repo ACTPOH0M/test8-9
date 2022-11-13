@@ -1,9 +1,6 @@
 package FirstTest;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.bidi.log.Log;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -62,6 +59,21 @@ public class FirstTest {
         Assert.assertTrue(Objects.equals(str2, str));
         String str3 = webDriver.findElement(By.xpath("//div[@class='de1']")).getText();
         Assert.assertTrue(Objects.equals(mainCode,str3));
+    }
+
+    @Test
+    public void HurtMePlenty() throws InterruptedException {
+        WebDriver webDriver= new ChromeDriver();
+        webDriver.get("https://cloud.google.com/");
+        webDriver.findElement(By.xpath("//input[@class='devsite-search-field devsite-search-query']")).click();
+        webDriver.findElement(By.xpath("//input[@class='devsite-search-field devsite-search-query']")).sendKeys("Google Cloud Platform Pricing Calculator");
+        webDriver.findElement(By.xpath("//input[@class='devsite-search-field devsite-search-query']")).sendKeys(Keys.ENTER);
+        Thread.sleep(5000);
+        webDriver.findElements(By.xpath("//a[@class='gs-title']")).get(0).click();
+
+        Thread.sleep(6000);
+        webDriver.findElement(By.xpath("//button[@class='md-fab md-mini cpc-tooltip-button md-button md-ink-ripple']")).click();
+        //эта хуета сломана
     }
 
 

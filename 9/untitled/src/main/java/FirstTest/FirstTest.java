@@ -73,7 +73,7 @@ public class FirstTest {
 
         Thread.sleep(6000);
         webDriver.findElement(By.xpath("//button[@class='md-fab md-mini cpc-tooltip-button md-button md-ink-ripple']")).click();
-        //эта хуета сломана
+        
     }
 
 
